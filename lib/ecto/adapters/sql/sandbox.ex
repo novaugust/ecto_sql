@@ -424,7 +424,7 @@ defmodule Ecto.Adapters.SQL.Sandbox do
 
   ## `start_owner!/2` vs `checkout/2`
 
-  `start_owner!/2` should be used in place of `checkout/2`.
+  `start_owner!/2` cannot be used alongside `checkout/2`; rather, it replaces it.
 
   `start_owner!/2` solves the problem of unlinked processes started in a test outliving the test process and causing ownership errors.
   For example, `LiveView`'s `live(...)` test helper starts a process linked to the LiveView supervisor, not the test process.
